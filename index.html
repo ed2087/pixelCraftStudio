@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>PixelCraft Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Navigation -->
+        <nav class="top-nav">
+            <div class="nav-brand">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+                        <rect width="8" height="8" rx="1" fill="url(#gradient1)"/>
+                        <rect x="12" width="8" height="8" rx="1" fill="url(#gradient2)"/>
+                        <rect x="24" width="8" height="8" rx="1" fill="url(#gradient3)"/>
+                        <rect y="12" width="8" height="8" rx="1" fill="url(#gradient4)"/>
+                        <rect x="12" y="12" width="8" height="8" rx="1" fill="url(#gradient5)"/>
+                        <rect x="24" y="12" width="8" height="8" rx="1" fill="url(#gradient6)"/>
+                        <rect y="24" width="8" height="8" rx="1" fill="url(#gradient7)"/>
+                        <rect x="12" y="24" width="8" height="8" rx="1" fill="url(#gradient8)"/>
+                        <rect x="24" y="24" width="8" height="8" rx="1" fill="url(#gradient9)"/>
+                        <defs>
+                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#667eea"/>
+                                <stop offset="100%" stop-color="#764ba2"/>
+                            </linearGradient>
+                            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#f093fb"/>
+                                <stop offset="100%" stop-color="#f5576c"/>
+                            </linearGradient>
+                            <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#4facfe"/>
+                                <stop offset="100%" stop-color="#00f2fe"/>
+                            </linearGradient>
+                            <linearGradient id="gradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#43e97b"/>
+                                <stop offset="100%" stop-color="#38f9d7"/>
+                            </linearGradient>
+                            <linearGradient id="gradient5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#fa709a"/>
+                                <stop offset="100%" stop-color="#fee140"/>
+                            </linearGradient>
+                            <linearGradient id="gradient6" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#a8edea"/>
+                                <stop offset="100%" stop-color="#fed6e3"/>
+                            </linearGradient>
+                            <linearGradient id="gradient7" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#ff9a9e"/>
+                                <stop offset="100%" stop-color="#fecfef"/>
+                            </linearGradient>
+                            <linearGradient id="gradient8" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#ffecd2"/>
+                                <stop offset="100%" stop-color="#fcb69f"/>
+                            </linearGradient>
+                            <linearGradient id="gradient9" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#a8c8ec"/>
+                                <stop offset="100%" stop-color="#7b68ee"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="nav-title">
+                    <h1>PixelCraft Studio</h1>
+                </div>
+            </div>
+            <div class="nav-actions">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="theme-toggle" id="themeToggle">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main App Layout -->
+        <div class="app-layout">
+            <!-- Left Sidebar -->
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-content">
+                    <!-- Upload Section -->
+                    <section class="sidebar-section upload-section">
+                        <div class="section-header">
+                            <h2>📁 Upload</h2>
+                            <p>Start with an image</p>
+                        </div>
+                        <div class="upload-zone" id="uploadZone">
+                            <input type="file" id="imageInput" accept="image/*" hidden>
+                            <div class="upload-content">
+                                <div class="upload-icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
+                                        <circle cx="12" cy="13" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <h3>Drop image</h3>
+                                <p>or click to browse</p>
+                                <div class="upload-formats">
+                                    <span>PNG</span>
+                                    <span>JPG</span>
+                                    <span>WebP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Controls Section -->
+                    <section class="sidebar-section controls-section">
+                        <div class="section-header">
+                            <h2>⚙️ Settings</h2>
+                        </div>
+                        <div class="controls-grid">
+                            <div class="control-item">
+                                <label>Grid Size</label>
+                                <div class="slider-group">
+                                    <input type="range" id="gridSize" min="20" max="80" value="40" class="modern-slider">
+                                    <span class="slider-value" id="gridSizeValue">40</span>
+                                </div>
+                            </div>
+                            <div class="control-item">
+                                <label>Image Opacity</label>
+                                <div class="slider-group">
+                                    <input type="range" id="imageOpacity" min="0" max="100" value="30" class="modern-slider">
+                                    <span class="slider-value" id="opacityValue">30%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Color Palette Section -->
+                    <section class="sidebar-section palette-section">
+                        <div class="section-header">
+                            <h2>🎨 Colors</h2>
+                            <p>Select pixel colors</p>
+                        </div>
+                        <div class="color-grid" id="colorPalette">
+                            <!-- Colors will be generated by JavaScript -->
+                        </div>
+                    </section>
+
+                    <!-- Action Buttons -->
+                    <section class="sidebar-section actions-section">
+                        <div class="actions-grid">
+                            <button class="action-btn primary" id="autoBtn">
+                                <span class="btn-icon">🤖</span>
+                                <span>Auto Convert</span>
+                            </button>
+                            <button class="action-btn secondary" id="clearBtn">
+                                <span class="btn-icon">🗑️</span>
+                                <span>Clear</span>
+                            </button>
+                            <button class="action-btn secondary" id="gridToggle">
+                                <span class="btn-icon">📊</span>
+                                <span>Grid</span>
+                            </button>
+                            <button class="action-btn accent" id="exportBtn">
+                                <span class="btn-icon">💾</span>
+                                <span>Export</span>
+                            </button>
+                            <button class="action-btn accent" id="downloadPng">
+                                <span class="btn-icon">📥</span>
+                                <span>Download</span>
+                            </button>
+                        </div>
+                    </section>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="main-content">
+                <!-- Stats Bar -->
+                <div class="stats-bar" id="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Progress</span>
+                        <span class="stat-value" id="progressValue">0%</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-label">Colors</span>
+                        <span class="stat-value" id="colorsValue">0</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-label">Empty</span>
+                        <span class="stat-value" id="emptyValue">1600</span>
+                    </div>
+                </div>
+
+                <!-- Canvas Section -->
+                <section class="canvas-section">
+                    <div class="canvas-wrapper">
+                        <canvas id="pixelCanvas"></canvas>
+                        <div class="canvas-overlay" id="canvasOverlay">
+                            <div class="coordinates-tooltip" id="coordinatesToolip"></div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
